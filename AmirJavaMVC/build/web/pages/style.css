@@ -1,0 +1,49 @@
+/* primary blue: #476CDA // primary orange: #FA5100*/
+
+body.adminPage,
+body.authPage, .badge-orange, .bg-orange {
+    background-color: #FA5100;
+}
+
+.box-login {
+    width: 65vw;
+    height: max-content;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.myinput:focus {
+    border-color: rgb(250, 81, 0) !important;
+    box-shadow: 0 0 0 0.25rem rgb(250, 81, 0, .25) !important;
+}
+
+
+.myinput {
+    border-radius: 30px !important;
+    height: 60px !important;
+}
+
+input, select {
+    border-color: rgb(250, 81, 0) !important;
+}
+
+.btn-primary {
+    background-color: #FA5100 !important;
+    border-color: #FA5100 !important;
+}
+
+.color-orange {
+    color: #FA5100;
+}
+
+.buttonAction {
+    width: 200px;
+    height: 100px;
+    
+    transition: .7s;
+}
+
+.buttonAction:hover {
+    transform: translateY(-5px);
+    background-color: #FA5100 !important;
+}

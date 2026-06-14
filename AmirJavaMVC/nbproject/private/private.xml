@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/model/User.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/model/LokasiModel.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/admin/admin.html</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/siswa/siswa.html</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/auth/login.html</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/model/ResponseModel.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/dao/AdminDao.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/admin/tambahLokasi.html</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/admin/admin.js</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/auth/register.html</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/controller/UserController.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/auth/auth.js</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/model/ListPresensiModel.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/dao/AuthDao.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/admin/generateQr.html</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/src/java/controller/AdminController.java</file>
+            <file>file:/E:/Amir/SCHOOL/PBO/amir_absensi/AmirJavaMVC/web/siswa/siswa.js</file>
+        </group>
+    </open-files>
+</project-private>

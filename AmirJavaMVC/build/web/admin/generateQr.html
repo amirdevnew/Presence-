@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-dev="A411_collaboration">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Absensi | Admin</title>
+    <link rel="stylesheet" href="MyLibrary/bootstrap.min.css">
+    <link rel="stylesheet" href="MyLibrary/fontawesome/css/all.min.css">
+
+    <style>
+        .btn-orange {
+            background-color: orangered;
+        }
+
+        .text-orangered {
+            color: orangered;
+        }
+        
+
+        .box-quotes {
+            min-height: 100px;
+            border-radius: 10px;
+            border: 5px solid orangered;
+        }
+
+
+    </style>
+</head>
+<body class="generateQrPage">
+    
+    
+    
+    
+<script src="MyLibrary/jquery-3.6.0.min.js"></script>
+<script src="MyLibrary/fontawesome/js/all.min.js"></script>
+<script src="MyLibrary/popper.min.js"></script>
+<script src="MyLibrary/bootstrap.min.js"></script>
+<script src="MyLibrary/html5-qrcode.min.js"></script>
+<script src="MyLibrary/qr-creator.min.js"></script>
+    
+<script>
+    $.ajax({
+        url: '/AmirJavaMVC/AdminController',
+        method: 'POST',
+        data: {
+            page: 'getAllLokasi'
+        },
+        dataType: 'JSON',
+        success: function(response) {
+            if(response){
+                response.forEach(function(lokasi) {
+                    var lokasiEl = $('<div>', {
+                        class: "m-3 fs-3 d-block text-center",
+                        id: lokasi.kodeLokasi,
+                        width: 'auto',
+                        height: 'auto'
+                    });
+                    $('.generateQrPage').append(lokasiEl);
+                    QrCreator.render({
+                        text: lokasi.kodeLokasi,
+                        radius: 0.5, // 0.0 to 0.5
+                        ecLevel: 'H', // L, M, Q, H
+                        fill: '#00', // foreground color
+                        background: null, // color or null for transparent
+                        size: 128 // in pixels
+                      }, document.querySelector('.generateQrPage #' + lokasi.kodeLokasi));
+                    
+                    var textLokasi = $('<p>', {
+                        class: "d-block fs-3",
+                        text: lokasi.namaLokasi
+                    });
+                    
+                    
+                    $('#' + lokasi.kodeLokasi).append(textLokasi);
+                });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

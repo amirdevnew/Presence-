@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-dev="A411_collaboration">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Absensi | Home</title>
+    <link rel="stylesheet" href="MyLibrary/bootstrap.min.css">
+    <link rel="stylesheet" href="MyLibrary/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="MyLibrary/sweetalert2.min.css">
+    
+
+    <style>
+        .btn-orange {
+            background-color: orangered;
+        }
+
+        .text-orangered {
+            color: orangered;
+        }
+        
+
+        .box-quotes {
+            min-height: 100px;
+            border-radius: 10px;
+            border: 5px solid orangered;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12 text-end">
+                <div class="btn btn-danger btn-orange btn-logout">Logout</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12 text-start">
+                <h1>Hello <span class="usernameHello"></span>!</h1>
+            </div>
+
+            <div class="col-12 text-start">
+                <h6>Jakarta, <span class="dateTag"></span>!</h6>
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <div class="col-12 col-md-6 p-2 text-center">
+                <div class="box-quotes w-100 container">
+                    <div class="row">
+                        <p class="fs-3 text-orangered">Quotes Inspirasi</p>
+                        <figure class="text-center">
+                            <blockquote class="blockquote">
+                                <p>"<span class="quoteText"></span>"</p>
+                            </blockquote>
+
+                            <figcaption class="blockquote-footer">
+                                <cite class="quoteAuthor" title="Source Title">Source Title</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <div class="col-12 col-md-6 p-2 text-center">
+                <p class="fs-3 fw-bold">Bagaimana perasaanmu hari ini?</p>
+            </div>
+        </div>
+
+        <div class="row px-5 mt-2 justify-content-center">
+            <div class="col-4 my-3">
+                <div class="btn btn-danger w-100 btnFeel" data-feel="senang"><i class="fas fa-face-smile-beam"></i> Senang</div>
+            </div>
+
+            <div class="col-4 my-3">
+                <div class="btn btn-danger w-100 btnFeel" data-feel="sedih"><i class="fas fa-face-frown"></i> Sedih</div>
+            </div>
+
+            <div class="col-4 my-3">
+                <div class="btn btn-danger w-100 btnFeel" data-feel="marah"><i class="fas fa-face-angry"></i> Marah</div>
+            </div>
+
+            <div class="col-4 my-3">
+                <div class="btn btn-danger w-100 btnFeel" data-feel="sakit"><i class="fas fa-face-dizzy"></i> Sakit</div>
+            </div>
+
+            <div class="col-4 my-3">
+                <div class="btn btn-danger w-100 btnFeel" data-feel="lelah"><i class="fas fa-face-sad-cry"></i> Lelah</div>
+            </div>
+
+            <div class="col-4 my-3">
+                <div class="btn btn-danger w-100 btnFeel" data-feel="semangat"><i class="fas fa-face-grin-hearts"></i> Semangat</div>
+            </div>
+            <input type="text" hidden class="feelToday">
+            <input type="text" hidden class="kodeLokasi">
+        </div>
+
+        <div class="row my-5 justify-content-center">
+            <div class="col-12 col-md-6 text-center">
+                <div class="btn btn-success fs-4 w-100 btnAbsen">Absen!</div>
+            </div>
+        </div>
+
+        
+        
+    </div>
+    
+   <div class="modal modalScanner" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Scan QR Code Absen</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card w-100">
+            <div class="card-body">
+                <div id="reader" class="reader w-100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="MyLibrary/jquery-3.6.0.min.js"></script>
+<script src="MyLibrary/fontawesome/js/all.min.js"></script>
+<script src="MyLibrary/popper.min.js"></script>
+<script src="MyLibrary/bootstrap.min.js"></script>
+<script src="MyLibrary/html5-qrcode.min.js"></script>
+<script src="MyLibrary/sweetalert2.min.js"></script>
+<script src="siswa.js"></script>
+<script>
+    let quotes = [
+        {
+            author: "BJ. Habibie",
+            text: "Keberhasilan bukanlah milik orang yang pintar. Keberhasilan adalah kepunyaan mereka yang senantiasa berusaha"
+        },
+
+        {
+            author: "R.A. Kartini",
+            text: "Saat suatu hubungan berakhir, bukan berarti 2 orang berhenti saling mencintai. Mereka hanya berhenti saling menyakiti"
+        },
+        {
+            author: "R.A. Kartini",
+            text: "Terkadang, kesulitan harus kamu rasakan terlebih dulu sebelum kebahagiaan yang sempurna datang kepadamu"
+        },
+        {
+            author: "R.A. Kartini",
+            text: "Habis gelap terbitlah terang"
+        },
+        {
+            author: "Ir. Soekarno",
+            text: "Belajar tanpa berpikir itu tidaklah berguna, tapi berpikir tanpa belajar itu sangatlah berbahaya"
+        },
+
+        {
+            author: "Ir. Soekarno",
+            text: "Barang siapa ingin mutiara, harus berani terjun di lautan yang dalam"
+        },
+        {
+            author: "Mohammad Hatta",
+            text: "Kurang cerdas dapat diperbaiki dengan belajar. Kurang cakap dapat dihilangkan dengan pengalaman. Namun tidak jujur itu sulit diperbaiki"
+        },
+        {
+            author: "Mohammad Hatta",
+            text: "Filosofi meluaskan pandangan serta mempertajam pikiran"
+        },
+        {
+            author: "Mohammad Hatta",
+            text: "Saya rela pergi ke penjara, selama ada buku. Karena dengan buku saya bebas"
+        },
+        {
+            author: "HOS Tjokroaminoto",
+            text: "Jika kalian ingin menjadi pemimpin besar, menulislah seperti wartawan dan bicaralah seperti orator"
+        },
+    ];
+
+
+    $(document).ready(function () {
+        setRandomQuote();
+    });
+
+    function setRandomQuote() {
+        let random = Math.round(Math.random() * (quotes.length));
+
+        if(random < 10) {
+            $('.quoteText').text(quotes[random].text)
+            $('.quoteAuthor').text(quotes[random].author)
+        } else {
+            $('.quoteText').text(quotes[1].text);
+            $('.quoteAuthor').text(quotes[1].author);
+        }
+    }
+</script>
+</body>
+</html>
